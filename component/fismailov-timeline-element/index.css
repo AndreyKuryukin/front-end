@@ -1,5 +1,7 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
 body {
-    font-family: Arial, sans-serif;
+    font-family: 'Source Sans Pro', Arial, sans-serif;
 }
 
 .assignment_wrapper {
@@ -23,13 +25,15 @@ body {
     height: 30px;
     width: 30px;
     float: left;
+    background: #fff;
 }
 
-.fa-exclamation-circle {
-    display: block;
-    height: 30px;
-    width: 30px;
-    background: url("exclamation-circle-solid.svg") center center no-repeat #fff;
+i {
+    position: relative;
+    top: 5px;
+    left: 7px;
+    font-size: 18px;
+    color: #e94221;
 }
 
 .assignment_dates {

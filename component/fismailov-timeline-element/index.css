@@ -59,7 +59,7 @@ i {
     padding: 15px;
 }
 
-.assignment_count {
+.assignment_details .assignment_count {
     color: #8f8f8f;
     width: 46px;
     font-size: 46px;
@@ -69,7 +69,7 @@ i {
     padding: 15px 5px;
 }
 
-.assignment_title {
+.assignment_details .assignment_title {
     border-left: 1px solid #e9eae7;
 }
 

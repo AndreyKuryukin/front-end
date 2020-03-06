@@ -28,6 +28,17 @@ body {
     background: #fff;
 }
 
+.assignment_status:before {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f06a";
+    position: relative;
+    top: 5px;
+    left: 7px;
+    font-size: 18px;
+    color: #e94221;
+}
+
 i {
     position: relative;
     top: 5px;

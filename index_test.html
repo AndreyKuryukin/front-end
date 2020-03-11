@@ -64,7 +64,41 @@
                 border-top: none;
 
             }
-            
+            .top_line {
+                background: rgb(115, 221, 115);
+                border: solid 2px black; 
+                width: 400px;
+                height: 20px;
+                text-align: center;
+            }
+            .top_icon {
+                float: left;
+                width: 50px;
+                border-right: black solid 2px;
+            }
+            .top_heading {
+                text-align: center;
+                font: bold;
+            }
+            .bottom_line {
+                border: black solid 2px;
+                height: 100px;
+                width: 400px;
+                background-color: #C2DFE9;
+                border-top: none;
+            }
+            .bottom_number {
+                width: 50px;
+                height: 100px;
+                text-align: center;
+                font-size: xx-large;
+                float: left;
+                border-right:  black solid 2px;
+            }
+            .bottom_title {
+                width: 350px;
+                font-size: 20px;
+            }
 
         </style>
 </head>
@@ -89,8 +123,20 @@
       <div class="header"><b> Start: this date | End: that date </b></div>
       <div class="number"> 1 </div> 
       <div class="lesson_title"> Long Lesson Title So Long It Does Not Fit Into One Line</div>
-    
 
+    <br> <br>
+
+      <div class="top_line">
+          <div class="top_icon"> &#10004; </div>
+          <div class="top_heading"> 
+              <span> Start: this date </span> 
+              <span> End: that date </span>
+            </div>
+      </div>
+      <div class="bottom_line"> 
+          <div class="bottom_number"> 1 </div>
+          <div class="bottom_title"> Long Lesson Title </div> 
+      </div>
 
 </body>
 </html>

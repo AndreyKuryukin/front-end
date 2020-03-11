@@ -65,7 +65,7 @@
 
             }
             .top_line {
-                background: rgb(115, 221, 115);
+                background: red;
                 border: solid 2px black; 
                 width: 400px;
                 height: 20px;
@@ -94,6 +94,9 @@
                 font-size: xx-large;
                 float: left;
                 border-right:  black solid 2px;
+            }
+            .top_icon::before {
+                content: "!";
             }
             .bottom_title {
                 width: 350px;
@@ -127,7 +130,7 @@
     <br> <br>
 
       <div class="top_line">
-          <div class="top_icon"> &#10004; </div>
+          <div class="top_icon">  </div>
           <div class="top_heading"> 
               <span> Start: this date </span> 
               <span> End: that date </span>

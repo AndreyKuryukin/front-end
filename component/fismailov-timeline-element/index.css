@@ -13,12 +13,18 @@ body {
 }
 
 .assignment_meta {
-    background: #e94221;
     color: #000;
     font-size: 12px;
     height: 30px;
     line-height: 1;
     overflow: hidden;
+    background: #e94221;
+    color: #e94221;
+}
+
+.assignment_meta.passed {
+    background: #4eaa4a;
+    color: #4eaa4a;
 }
 
 .assignment_status {
@@ -36,7 +42,10 @@ body {
     top: 5px;
     left: 7px;
     font-size: 18px;
-    color: #e94221;
+}
+
+.assignment_status.passed:before {
+    content: "\f058";
 }
 
 i {
@@ -55,6 +64,7 @@ i {
 .assignment_due {
     display: inline-block;
     padding: 0 0 0 15px;
+    color: #000;
 }
 
 .assignment_details {

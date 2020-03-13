@@ -1,76 +1,52 @@
 <!DOCTYPE html>
 <html>
-    <head>
-        <title>Hello HTML</title>
-        <link rel="stylesheet" href="styles.css"/>
-        <style>
+
+<head>
+    <title>Hello HTML</title>
+    <link rel="stylesheet" href="styles.css" />
+    
+    <style>
+        .assignment {
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+            background: #dddddd;
+            width: 240px;
+            height: 24px;
+            border: #0c0c0c solid 1px;
+            font-size: 12px;
+            color: #080a08;
+        }
+
+
+        @media (orientation: landscape)  {
             .assignment {
-                display: i;
-                background: #ff0000;
-                width: 120px;
-                height: 24px;
-                border-left: #0c0c0c solid 1px;
-                font-size: 12px;
-                color: #00ff00;
+                background: #4ce946;
             }
-        </style>
-    </head>
-    <body>
-        <h1 class="assignment">HEADER</h1>
-        <div>
-            Hello Again !!!
-        </div>
-        <span>
-            Hello SPAN<br/>
-            <b>Bold</b>
-            <p/> PRAGRAPH
-        </span>
-       
-        <form>
-           <input title="Hello title" type="checkbox" name="name" id="input"></input>
-           <input title="Radio 1" type="radio" value="1" name="radio"></input>
-           <input title="Radio 2" type="radio" value="2" name="radio"></input> 
-           <select name="select">
-               <option value="1">Option 1</option>
-               <option value="2">Option 2</option>
-           </select>
-        </form>
+        }
+
         
 
-        <ul>
-            <li>
-                Item 1
-            </li>
-            <li>
-                Item 2
-            </li>
-        </ul>
-    
-        <a href="http://google.com">LINK</a>
+        @media (orientation: portrait)  {
+            .assignment {
+                background: #d8e661;
+            }
+        }
 
-        <table>
-            <thead>
-                <th width="">
-                    col 1
-                </th>
-                <th>
-                    col 2
-                </th>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>Cell 1</td>
-                    <td>Cell 2</td>
-                </tr>
-            </tbody>
-        </table>
-      
-        <label for="input">Label</label>
-    <!--
-        <script type="text/javascript">
-        console.log("HELLO")
-        </script> 
-    -->   
+        .child {}
+    </style>
+</head>
+
+<body>
     
-    </body>
+    <div onclick="onClick()" class="assignment">
+        <div class="child" id="child">First</div>
+        <div>Middle</div>
+        <div>Last</div>
+    </div>
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
 </html>

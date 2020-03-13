@@ -4,41 +4,6 @@
     <meta charset="UTF-8">
     <title>Homework</title>
         <style>
-            
-            .icon {
-                border: black solid 2px;
-                width: 50px;
-                height: 20px;
-                text-align: center;
-                background-color: rgb(115, 221, 115);
-                float: left;
-            }
-            .header {
-                background: rgb(115, 221, 115);
-                border: solid 2px black; 
-                width: 400px;
-                height: 20px;
-                text-align: center;
-            }
-            .number {
-                border: black solid 2px;
-                width: 50px;
-                height: 100px;
-                text-align: center;
-                background-color: #C2DFE9;
-                font-size: xx-large;
-                float: left;
-                border-top: none;
-            }
-            .lesson_title {
-                border: black solid 2px;
-                background-color: #C2DFE9;
-                width: 400px;
-                height: 100px;
-                font-size: 20px;
-                border-top: none;
-
-            }
             .top_line {
                 background: red;
                 border: solid 2px black; 
@@ -85,17 +50,22 @@
                 width: 50px;
                 height: 100px;
             }
+            .red {
+                background-color: red;
+            }
+            .green {
+                background-color: green;
+            
+            }
+            .square {
+                width: 100px;
+                height: 100px;
+                margin: 10px;
+                border: black solid 2px;
+            }
         </style>
 </head>
 <body>
-
-    <div class="icon"> &#10004; </div>
-      <div class="header"><b> Start: this date | End: that date </b></div>
-      <div class="number"> 1 </div> 
-      <div class="lesson_title"> Long Lesson Title So Long It Does Not Fit Into One Line</div>
-
-    <br> <br>
-
       <div class="top_line">
           <div class="top_heading"> 
               <span> Start: this date </span> 
@@ -106,7 +76,11 @@
           <div class="bottom_title"> Long Lesson Title </div> 
       </div>
 
+    <br> <br>
 
+    <div onclick="exchangeColors()" class="red square" id="red"></div>
+    <div onclick="exchangeColors()" class="green square" id="green"></div>  
 
+    <script type="text/javascript" src="script_test.js"></script>
 </body>
 </html>

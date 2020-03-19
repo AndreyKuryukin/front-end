@@ -1,0 +1,23 @@
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+    display: flex;
+    justify-content: center;
+}
+
+.persons, .employees {
+    width: 500px;
+    margin: 20px;
+}
+
+.form, .result {
+    display: block;
+}
+
+label, select, input {
+    display: table-row;
+    width: 100%;
+}
+
+.field {
+    padding-bottom: 20px;
+}

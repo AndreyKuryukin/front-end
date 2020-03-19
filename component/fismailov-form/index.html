@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <link rel="stylesheet" href="index.css"/>
+    <script type="text/javascript" src="index.js"></script>
+</head>
+<body>
+<div class="persons">
+    <div class="form">
+        <form id="persons" action="">
+            <div class="field">
+                <label for="name">Name</label>
+                <input id="name" type="text"/>
+            </div>
+            <div class="field">
+                <label for="tel">Tel</label>
+                <input id="tel" type="text"/>
+            </div>
+            <input type="button" value="Add" onclick="createPerson()">
+        </form>
+    </div>
+
+    <div class="result">
+        <h2>Persons</h2>
+        <ul id="personsList"></ul>
+    </div>
+</div>
+<div class="employees">
+    <div class="form">
+        <form id="employees" action="">
+            <div class="field">
+                <label for="persons">Person</label>
+                <select name="persons" id="employeeName">
+                </select>
+            </div>
+            <div class="field">
+                <label for="jobtitle">Job title</label>
+                <input id="jobtitle" type="text"/>
+            </div>
+            <input type="button" value="Add" onclick="createEmployee()">
+        </form>
+    </div>
+
+    <div class="result">
+        <h2>Employees</h2>
+        <ul id="employeeList"></ul>
+    </div>
+</div>
+</body>
+</html>

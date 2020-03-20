@@ -8,18 +8,28 @@ class Person {
   }
 }
 
-class Employee {
+class Employee extends Person{ 
   name;
   jobTitle;
 
-  constructor(name, jobTitle) {
-    this.name = name;
+  constructor(name, jobTitle, tel) {
+    super(name, tel)
     this.jobTitle = jobTitle;
   }
 }
 
 let persons = [];
 let employees = [];
+
+
+function render(elemnts, root) {
+  root.innerHTML = '';
+  elemnts.forEach(element => {
+    let personDisplay = document.createElement("li");
+    personDisplay.innerHTML = `${element.name}: ${element.tel} - ${element.jobTitle ? element.jobTitle : ''}`;
+    root.append(personDisplay)
+  });
+}
 
 function createPerson() {
   let name = document.getElementById('name');
@@ -46,7 +56,7 @@ function createEmployee() {
   employeeDisplay.innerHTML = `${employeeName.value}: ${jobTitle.value}`;
   document.getElementById('employeeList').appendChild(employeeDisplay);
   employees.push(new Employee(employeeName.value, jobTitle.value));
-
+  render(employees, document.getElementById('employeeList'))
   employeeName.value = "";
   jobTitle.value = "";
 }

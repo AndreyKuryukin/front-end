@@ -1,0 +1,79 @@
+CSS
+ 
+     Дано:
+        <div class="myClass">
+            <div>
+                First
+            </div>
+            <div>
+                Second               
+            </div>
+            <div>
+                Third
+                <div prop="value" class="myClass">
+                    Third child
+                </div>
+            </div>
+        </div>
+
+Напишите класс myClass таким образом, чтобы:
+  1. div "Second" имел красный фон
+  2. Все div кроме "Third" имели сплошную границу в 1px красного цвета
+  3. div "Third child" визуально имел помимо текста "Third child", текст "Additional" написанный зеленым  
+  4. Все непосредственные дочерние элементы имели внутренний отступ 12px
+  5. Все дочерние элементы, разместились вертикально на одинаковом расстоянии друг от друга по центру по горизонтали
+     - по горизонтали, на всю ширину, в соотношении 1, 2, 3
+
+
+JS.
+1.  Дано:
+ 
+   function func() {
+       let b = 1;
+       console.log(a);
+       if (b) {
+           var a = b;
+       }
+   }
+
+   func();
+ 
+ Что будет в консоли?
+
+2. Дано:
+   
+   function func() {
+       this.prop = () => {
+           console.log(this;)
+       }
+       prop();
+   }
+
+   const obj = {a: 'abc'};
+   const obj1 = obj;
+   obj1.func = func;
+
+   Что будет в консли при вызове obj1.func()?;
+
+3. Дано:
+
+    func();
+    func1();
+
+    const func1 = function() {
+        console.log(this);
+    }
+
+    function func(method) {
+        this.method = method
+        console.log(this.method());
+    }
+
+    const obj = {
+        m: function() {return this}
+    }
+
+    new func(obj.m);
+
+    1. Есть ли ошибка в коде?
+    2. 

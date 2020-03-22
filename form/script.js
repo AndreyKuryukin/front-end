@@ -1,6 +1,25 @@
 let persons = [];
 let employees = [];
 
+class Person {
+    name;
+    phone;
+
+    constructor(personName, personPhone) {
+        this.personName = personName;
+        this.personPhone = personPhone;
+    }
+}
+
+class Employee extends Person {
+    jobTitle;
+
+    constructor(personName, personPhone, employeeJobTitle) {
+        super(personName, personPhone);
+        this.employeeJobTitle = employeeJobTitle;
+    }
+}
+
 const onPersonSubmit = function () {
 
     let enteredName = document.getElementById("name");
@@ -19,10 +38,10 @@ const onPersonSubmit = function () {
     personsList.appendChild(newPerson);
     employeeDropdown.appendChild(newEmployeeName);
 
-  //  persons.push(new Person(name.value, phone.value));
+    persons.push(new Person(enteredName.value, enteredPhone.value));
+        
+    console.log(persons);
 
-  //  name.value = "";
-  //  phone.value = "";
 }
 
 const onEmployeeSubmit = function () {
@@ -33,34 +52,19 @@ const onEmployeeSubmit = function () {
 
     let newEmployee = document.createElement("li");
 
-    newEmployee.innerHTML = chosenEmployeeName.value + ": " + enteredJobTitle.value;
+    newEmployee.innerHTML = chosenEmployeeName.value + " (" + phone.value + "): " + enteredJobTitle.value;
 
     employeesList.appendChild(newEmployee);
+
+    employees.push(new Employee(chosenEmployeeName.value, phone.value, enteredJobTitle.value));
+    console.log(employees);
 
 }
 
 const onFocus = function () {
-    if (this.value == "Sample") this.value = "";
+    if (this.value != "") this.value = "";
 }
 
-class Person {
-    name;
-    phone;
-
-    constructor(name, phone) {
-        this.name = name;
-        this.phone = phone;
-    }
-}
-
-class Employee extends Person {
-    jobTitle;
-
-    constructor(name, phone, jobTitle) {
-        super(name, phone);
-        this.jobTitle = jobTitle;
-    }
-}
 
 
 

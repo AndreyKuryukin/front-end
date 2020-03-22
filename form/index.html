@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <title>Simple form</title>
+    <link rel="stylesheet" href="styles.css" />
+</head>
+
+<body>
+    
+ <div id="container">
+        <form class="person_form" id="person_form">
+
+             <p class="person"></p>
+                <input id="name" type="text" name="person" value="123">
+                <label for="person"> Name </label>
+             </p>
+         
+           <p class="phone">
+                <input id="phone" type="text" name="person" value="321">
+                <label for="person" > Phone </label>
+            </p>
+
+            <p class="send">
+                <input onclick="onPersonSubmit()" type="button" value="Add">
+            </p>
+
+            <p class="persons">
+                <ul id="persons_list">
+                </ul>
+            </p>
+
+        </form>
+
+        <form class="employee_form" id="employee_form">
+    
+                 <p class="employee">
+                 <select id="employee_names" name="employee" value="Select" required>
+                    <label for="employee">Select a person</label>
+                    <option disabled selected value ="">Select a person</option>
+                 </select>
+                 </p>
+             
+               <p class="job_title">
+                    <input id="position" type="text" name="employee" value="Sample title"/>
+                    <label for="employee" > Job Title </label>
+                </p>
+    
+                <p class="send">
+                    <input onclick="onEmployeeSubmit()" type="button" value="Add"  />
+                </p>
+    
+                <p class="employees">
+                    <ul id="employees_list">
+                    </ul>
+                </p>
+    
+        </form>
+            
+    </div>
+
+    <script type="text/javascript" src="script.js"></script>
+
+</body>
+
+</html>

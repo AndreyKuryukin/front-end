@@ -1,0 +1,108 @@
+@import url('https://fonts.googleapis.com/css?family=Source+Sans+Pro&display=swap');
+
+body {
+    font-family: 'Source Sans Pro', Arial, sans-serif;
+}
+
+.assignment_wrapper {
+    float: left;
+    position: relative;
+    width: 310px;
+    height: 100%;
+    border: 1px solid #e9eae7;
+}
+
+.assignment_meta {
+    color: #000;
+    font-size: 12px;
+    height: 30px;
+    line-height: 1;
+    overflow: hidden;
+    background: #e94221;
+    color: #e94221;
+}
+
+.assignment_meta.passed {
+    background: #4eaa4a;
+    color: #4eaa4a;
+}
+
+.assignment_status {
+    height: 30px;
+    width: 30px;
+    float: left;
+    background: #fff;
+}
+
+.assignment_status:before {
+    font-family: "Font Awesome 5 Pro";
+    font-weight: 900;
+    content: "\f06a";
+    position: relative;
+    top: 5px;
+    left: 7px;
+    font-size: 18px;
+}
+
+.assignment_status.passed:before {
+    content: "\f058";
+}
+
+i {
+    position: relative;
+    top: 5px;
+    left: 7px;
+    font-size: 18px;
+    color: #e94221;
+}
+
+.assignment_dates {
+    float: left;
+    line-height: 30px;
+}
+
+.assignment_due {
+    display: inline-block;
+    padding: 0 0 0 15px;
+    color: #000;
+}
+
+.assignment_details {
+    display: table;
+    width: 100%;
+    height: 100%;
+}
+
+.assignment_details div {
+    display: table-cell;
+    height: 130px;
+    vertical-align: top;
+    padding: 15px;
+}
+
+.assignment_details .assignment_count {
+    color: #8f8f8f;
+    width: 46px;
+    font-size: 46px;
+    font-weight: bold;
+    line-height: 1;
+    text-align: center;
+    padding: 15px 5px;
+}
+
+.assignment_details .assignment_title {
+    border-left: 1px solid #e9eae7;
+}
+
+.assignment_metrics {
+    position: absolute;
+    bottom: 15px;
+    right: 15px;
+    color: #666;
+    font-size: 14px;
+}
+
+.assignment_metrics span {
+    display: inline-block;
+    margin: 0 0 0 15px;
+}

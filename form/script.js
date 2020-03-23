@@ -2,8 +2,8 @@ let persons = [];
 let employees = [];
 
 class Person {
-    name;
-    phone;
+    personName;
+    personPhone;
 
     constructor(personName, personPhone) {
         this.personName = personName;
@@ -12,7 +12,7 @@ class Person {
 }
 
 class Employee extends Person {
-    jobTitle;
+    employeeJobTitle;
 
     constructor(personName, personPhone, employeeJobTitle) {
         super(personName, personPhone);
@@ -30,8 +30,8 @@ const onPersonSubmit = function () {
     let newPerson = document.createElement("li");
     let newEmployeeName = document.createElement("option");
 
-    newPerson.innerHTML = enteredName.value + ": " + enteredPhone.value;
-  //  newPerson.innerHTML = '${enteredName.value}:${enteredPhone.value}';
+    // newPerson.innerHTML = enteredName.value + ": " + enteredPhone.value;
+    newPerson.innerHTML = `${enteredName.value}:${enteredPhone.value}`;
     newEmployeeName.value = enteredName.value;
     newEmployeeName.innerHTML = enteredName.value;
 
@@ -47,16 +47,19 @@ const onPersonSubmit = function () {
 const onEmployeeSubmit = function () {
 
     let enteredJobTitle = document.getElementById("position");
-    let chosenEmployeeName = document.getElementById("employee_names");
+    let chosenEmployeeName = document.getElementById("employee_names").value;
     let employeesList = document.getElementById("employees_list");
+    const pnone =  persons.find((person) => person.personName === chosenEmployeeName).personPhone;
 
     let newEmployee = document.createElement("li");
 
-    newEmployee.innerHTML = chosenEmployeeName.value + " (" + phone.value + "): " + enteredJobTitle.value;
+    const employee = new Employee(chosenEmployeeName, pnone, enteredJobTitle.value);
+
+    newEmployee.innerHTML = employee.personName + " (" + pnone + "): " + employee.employeeJobTitle;
 
     employeesList.appendChild(newEmployee);
 
-    employees.push(new Employee(chosenEmployeeName.value, phone.value, enteredJobTitle.value));
+    employees.push(new Employee(chosenEmployeeName, pnone, enteredJobTitle.value));
     console.log(employees);
 
 }

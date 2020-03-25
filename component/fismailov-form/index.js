@@ -8,12 +8,12 @@ class Person {
   }
 }
 
-class Employee extends Person{ 
+class Employee extends Person {
   name;
   jobTitle;
 
   constructor(name, jobTitle, tel) {
-    super(name, tel)
+    super(name, tel);
     this.jobTitle = jobTitle;
   }
 }
@@ -21,28 +21,27 @@ class Employee extends Person{
 let persons = [];
 let employees = [];
 
-
-function render(elemnts, root) {
+function render(elements, root) {
   root.innerHTML = '';
-  elemnts.forEach(element => {
+  elements.forEach(element => {
     let personDisplay = document.createElement("li");
+    let employeeOption = document.createElement("option");
+
+    employeeOption.value = `${element.name}`;
+    employeeOption.innerHTML = `${element.name}`;
     personDisplay.innerHTML = `${element.name}: ${element.tel} - ${element.jobTitle ? element.jobTitle : ''}`;
-    root.append(personDisplay)
+
+    root.appendChild(personDisplay);
+    document.getElementById('employeeName').appendChild(employeeOption);
   });
 }
 
 function createPerson() {
   let name = document.getElementById('name');
   let tel = document.getElementById('tel');
-  let personDisplay = document.createElement("li");
-  let employeeOption = document.createElement("option");
 
-  personDisplay.innerHTML = `${name.value}: ${tel.value}`;
-  employeeOption.value = `${name.value}`;
-  employeeOption.innerHTML = `${name.value}`;
-  document.getElementById('personsList').appendChild(personDisplay);
-  document.getElementById('employeeName').appendChild(employeeOption);
   persons.push(new Person(name.value, tel.value));
+  render(persons, document.getElementById('personsList'));
 
   name.value = "";
   tel.value = "";
@@ -51,12 +50,11 @@ function createPerson() {
 function createEmployee() {
   let employeeName = document.getElementById('employeeName');
   let jobTitle = document.getElementById('jobtitle');
-  let employeeDisplay = document.createElement("li");
 
-  employeeDisplay.innerHTML = `${employeeName.value}: ${jobTitle.value}`;
-  document.getElementById('employeeList').appendChild(employeeDisplay);
-  employees.push(new Employee(employeeName.value, jobTitle.value));
-  render(employees, document.getElementById('employeeList'))
+  employees.push(new Employee(employeeName.value, jobTitle.value)); //where should I get tel?
+  render(employees, document.getElementById('employeeList'));
+  //receiving undefined: undefined here...
+
   employeeName.value = "";
   jobTitle.value = "";
 }

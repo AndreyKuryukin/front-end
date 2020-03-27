@@ -9,7 +9,6 @@ class Person {
 }
 
 class Employee extends Person {
-  name;
   jobTitle;
 
   constructor(name, jobTitle, tel) {
@@ -48,13 +47,15 @@ function createPerson() {
 }
 
 function createEmployee() {
-  let employeeName = document.getElementById('employeeName');
-  let jobTitle = document.getElementById('jobtitle');
+  let employeeName = document.getElementById('employeeName').value;
+  let jobTitle = document.getElementById('jobtitle').value;
 
-  employees.push(new Employee(employeeName.value, jobTitle.value)); //where should I get tel?
+  const person = persons.find((prsn) => prsn.name === employeeName);
+
+  employees.push(new Employee(person.name, jobTitle,person.tel)); //where should I get tel?
   render(employees, document.getElementById('employeeList'));
   //receiving undefined: undefined here...
 
-  employeeName.value = "";
-  jobTitle.value = "";
+  // employeeName.value = "";
+  // jobTitle.value = "";
 }

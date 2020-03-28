@@ -20,14 +20,15 @@ class Employee extends Person {
 let persons = [];
 let employees = [];
 
-function cleanUp() {
+function cleanUp(root) {
 	document.getElementById('name').value = '';
 	document.getElementById('tel').value = '';
 	document.getElementById('employeeName').innerHTML = '';
+	root.innerHTML = '';
 }
 
 function render(elements, root) {
-	cleanUp();
+	cleanUp(root);
 	elements.forEach(element => {
 		let personDisplay = document.createElement("li");
 		let employeeOption = document.createElement("option");

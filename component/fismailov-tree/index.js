@@ -44,14 +44,11 @@ const tree = {
   ]
 };
 
-let currentParents = [];
-
-function getParents(node) {
+function getParents(node, parentArray = []) {
   if (node.children.length > 0) {
-    currentParents.push(node.a);
-    node.children.forEach((child) => getParents(child));
+    node.children.forEach((child) => getParents(child, [...parentArray, node.a]));
   } else {
-    console.log(`${node.a} has parents: ${currentParents}`);
+    console.log(`${node.a} has parents: ${parentArray}`);
   }
 }
 

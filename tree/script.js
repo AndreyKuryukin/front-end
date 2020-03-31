@@ -44,25 +44,14 @@ const tree = {
     ]
 };
 
-let parents = [];
-
-const walkThrough = function(node) {
-
+const walkThrough = function (node, parentArr = []) {
     const length = node.children.length;
-    console.log(`LENGTH: ${length}`);
-
     if (length > 0) {
-  //      parents.push(node.a);
-        for (let i = 0; i < length; i++) {
-            parents.push(node.a);
-            walkThrough(node.children[i]);
-            }
-        }
-    else {
-    console.log(`${node.a} has parents: ${parents}`);
-    parents = [];
+        node.children.forEach(child =>  walkThrough(child, [...parentArr, child.a]))   
     }
-
+    else {
+        console.log(`${node.a} has parents: ${parentArr}`);
+    }
 }
 
 walkThrough(tree);

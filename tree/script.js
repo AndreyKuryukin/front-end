@@ -44,18 +44,28 @@ const tree = {
     ]
 };
 
-const walkThrough = function(node, path) {
+let parents = [];
+
+const walkThrough = function(node) {
 
     const length = node.children.length;
-    console.log("LENGTH: " + length);
+    console.log(`LENGTH: ${length}`);
 
-    for (let i = 0; i < length; i++) {
-        walkThrough(node.children[i]);
-        console.log("Current node: " + node.children[i].a + " i= " + i);
- //       console.log("Current child: " + node.a);
+    if (length > 0) {
+  //      parents.push(node.a);
+        for (let i = 0; i < length; i++) {
+            parents.push(node.a);
+            walkThrough(node.children[i]);
+            }
         }
+    else {
+    console.log(`${node.a} has parents: ${parents}`);
+    parents = [];
+    }
+
 }
 
 walkThrough(tree);
 
 // Вывести в консоль цепочки родителей для каждого самого глубокого чилдрена
+
